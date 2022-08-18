@@ -8,9 +8,6 @@
 # testing
 /coverage
 
-# API KEYs
-.env
-
 # production
 /build
 
@@ -24,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# API KEYs
+.env
