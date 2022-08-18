@@ -1,0 +1,15 @@
+body {
+  background-color: #222;
+}
+
+.container h2 {
+  color: white;
+}
+
+.container pre {
+  color: #999;
+}
+
+.container hr {
+  color: #999;
+}
