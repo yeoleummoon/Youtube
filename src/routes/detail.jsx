@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import Searchbar from "../components/searchbar";
 import Videodetail from "./videoDetail";
 
 function Detail() {
@@ -9,7 +8,7 @@ function Detail() {
   const { id } = useParams();
   useEffect(()=> {
       const getDetail = async() => {
-      const response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=AIzaSyDq4WCbEcbZbSsNZWvJ0vhs63F_AeOj-7A`)
+      const response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`)
       const json = await response.json();
       setDetail(json.items);
     }
@@ -17,7 +16,6 @@ function Detail() {
   },[id]);
   return (
     <>
-    <Searchbar />
     <div>
     {detail.map((detail) =>
       <Videodetail

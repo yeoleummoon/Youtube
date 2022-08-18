@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom"
 import { useState } from 'react';
-import '../app.css'
+import styles from '../components/searchbar.module.css'
 import Searchdetail from "./searchDetail";
 
 function Searchbar(){
@@ -20,14 +20,17 @@ function Searchbar(){
     getDetail();
     <Searchdetail 
       key={result.id}
+      thumbnail={result.snippet.thumbnail.medium.url}
+      title={result.snippet.title}
+      uploader={result.snippet.channelTitle}
     />
     }
   }
   return(
-    <nav className="navbar">
-      <img className="title-icon" src="../images/logo.png" alt="youtube"/>
-      <span className="title"><Link to='/'>YouTube</Link></span>
-    <form className="search-form" onSubmit={onSubmit}>
+    <header className={styles.navbar}>
+      <img className={styles.title_icon} src="../images/logo.png" alt="youtube"/>
+      <span className={styles.title}><Link to='/'>YouTube</Link></span>
+    <form className={styles.search_form} onSubmit={onSubmit}>
       <input 
         type="text" 
         placeholder="Search"
@@ -36,9 +39,9 @@ function Searchbar(){
         value={search}
         required  
       />
-      <button className="search-button"><img src="../images/search.png" alt="search"/></button>
+      <button className={styles.search_button}><img src="../images/search.png" alt="search"/></button>
     </form>
-    </nav>
+    </header>
   )
 }
 

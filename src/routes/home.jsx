@@ -1,23 +1,20 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Videolist from "../components/videoList";
-import Searchbar from "../components/searchbar";
 import styles from  "../components/videoList.module.css";
 
 function Home() {
   const [videos, setVideos] = useState([]);
   const getVideo = async() => {
-      const response = await fetch("https://youtube.googleapis.com/youtube/v3/videos?part=statistics,snippet&chart=mostPopular&maxResults=25&regionCode=kr&key=AIzaSyDq4WCbEcbZbSsNZWvJ0vhs63F_AeOj-7A")
+      const response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=statistics,snippet&chart=mostPopular&maxResults=25&regionCode=kr&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`)
       const json = await response.json();
       setVideos(json.items);
-      console.log(json.items);
     }
   useEffect(()=> {
     getVideo()
   },[])
   return (
     <>
-    <Searchbar />
     <div className={styles.videos}>
     {videos.map((video) =>
       <Videolist
