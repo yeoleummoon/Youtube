@@ -44,7 +44,7 @@ function Searchbar(){
     (""):
     (<div className={detailStyles.videos}>
       {result.map((result) =>
-      <Searchdetail 
+        <Searchdetail 
       key={result.id.videoId}
       id={result.id.videoId}
       title={result.snippet.title}
