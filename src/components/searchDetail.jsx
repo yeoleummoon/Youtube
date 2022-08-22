@@ -1,10 +1,11 @@
 import {Link} from "react-router-dom"
+import styles from "./searchDetail.module.css";
 
 function searchDetail({id, thumbnail, title, uploader}){
   return(
-    <div>
+    <div className={styles.container}>
       <img src={thumbnail} alt={title} />
-      <div>
+      <div className={styles.index}>
         <h4><Link to={`/video/${id}`}>{title}</Link></h4>
         <span>{uploader}</span>
       </div>
