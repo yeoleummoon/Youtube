@@ -7,15 +7,14 @@ import './app.css';
 import Home from './routes/home';
 import Detail from './routes/detail'
 import Searchbar from "./components/searchbar";
-import {decode} from 'html-entities';
+
 
 function App(){
-  decode('&#39;');
-  return (
+  return(
     <Router>
-      <div>
+      <nav>
         <Searchbar />
-      </div>
+      </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/video/:id" element={<Detail />}/>
