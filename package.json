@@ -2,7 +2,6 @@
   "name": "template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yeoleummoon.github.io/Youtube/",  
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
