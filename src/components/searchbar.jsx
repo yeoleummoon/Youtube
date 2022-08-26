@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"
 import styles from '../components/searchbar.module.css';
 import SearchDetail from "../routes/searchDetail";
 
-
 const Searchbar = (props) => {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState(false);
